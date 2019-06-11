@@ -15,7 +15,7 @@ typedef struct{
 bool
 comp(weighted_vertex_t a, weighted_vertex_t b)
 {
-    return a.cost < b.cost;
+    return a.cost > b.cost;
 }
 typedef bool(*CompareType)(weighted_vertex_t a, weighted_vertex_t b);
 
@@ -59,6 +59,7 @@ a_star(stinger_t * S, int64_t NV, int64_t source_vertex, int64_t dest_vertex, bo
                                     else{
                                         new_cost = cost_so_far[current.vertex] + STINGER_EDGE_WEIGHT;
                                     }
+
                                     if (new_cost < cost_so_far[STINGER_EDGE_DEST] || cost_so_far[STINGER_EDGE_DEST] == std::numeric_limits<int64_t>::max()) {
                                         cost_so_far[STINGER_EDGE_DEST] = new_cost;
                                         weighted_vertex_t next;
