@@ -285,7 +285,7 @@ stinger_names_print(stinger_names_t * sn) {
 
 int64_t
 stinger_names_remove_type(stinger_names_t * sn, int64_t type) {
-  LOG_E("Deleting of stinger names is unsupported in base mode");
+//  LOG_E("Deleting of stinger names is unsupported in base mode");
   return -1;
 }
 
