@@ -1,5 +1,7 @@
 # STINGER local stuff
 /build
+/Debug
+/Release
 
 # Compiled Object files
 *.slo

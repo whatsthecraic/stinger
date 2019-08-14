@@ -92,7 +92,7 @@ else ()
     CONFIGURE_COMMAND   CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER} ${CMAKE_BINARY_DIR}/external/src/protobuf/configure
       --prefix=${CMAKE_BINARY_DIR}
       --enable-shared
-    BUILD_COMMAND $(MAKE)
+    BUILD_COMMAND $(MAKE) -j
     INSTALL_COMMAND $(MAKE) install
   )
 
