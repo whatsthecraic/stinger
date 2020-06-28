@@ -417,16 +417,16 @@ protected:
             if (updates_per_range < omp_get_num_threads())
             {
                 // If there aren't many updates, just give them all to one thread
-                local_ranges.push_back(make_pair(begin, end));
+                local_ranges.push_back(std::make_pair(begin, end));
             } else {
                 // Split the updates evenly amoung threads
                 for (size_t i = 0; i < num_ranges-1; ++i)
                 {
-                    local_ranges.push_back(make_pair(begin, begin + updates_per_range));
+                    local_ranges.push_back(std::make_pair(begin, begin + updates_per_range));
                     begin += updates_per_range;
                 }
                 // Last range may be a different size if work doesn't divide evenly
-                local_ranges.push_back(make_pair(begin, end));
+                local_ranges.push_back(std::make_pair(begin, end));
             }
 
             // Combine all ranges into shared list
