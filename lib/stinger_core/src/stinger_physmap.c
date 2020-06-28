@@ -95,7 +95,7 @@ stinger_physmap_id_get(stinger_physmap_t * p, stinger_vertices_t * v, vindex_t v
 {
   char * name = stinger_names_lookup_name(p, vertexID);
   if(name) {
-    int len = strlen(name);
+    int len = strlen(name) +1;
 
     if(*outbuffer == NULL || *outbufferlength == 0){
       *outbuffer = xmalloc(len * sizeof(char));
@@ -110,7 +110,7 @@ stinger_physmap_id_get(stinger_physmap_t * p, stinger_vertices_t * v, vindex_t v
 	return -1;
       }
     }
-    memcpy(*outbuffer, name, len+1);
+    memcpy(*outbuffer, name, len);
     *outbufferlength = len;
     return 0;
   }
