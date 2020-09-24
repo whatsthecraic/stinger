@@ -256,7 +256,7 @@ get_from_ebpool (const struct stinger * S, eb_index_t *out, size_t k)
 	    "       information on how to do this.\n");
       abort();
     }
-    OMP("omp parallel for")
+    //OMP("omp parallel for")
       for (size_t ki = 0; ki < k; ++ki)
         out[ki] = ebt0 + ki;
   }
